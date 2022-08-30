@@ -1,0 +1,26 @@
+# Week by Week schedule
+
+Weeks 1, 2, 3:
+- Introduction
+- Binary Number and Binary Codes
+- Gate-level models
+
+Weeks 4, 5:
+- Intro to VHDL
+- Design of combinational circuits
+
+Week 6:
+- Sequential circuits
+
+Week 7:
+- Automata / Finite-state machines
+
+Week 8:
+- Register-transfer-level / Microarchitecture
+
+Week 9:
+- Control path / Single purpose processor
+
+Week 10, 11:
+- MIPS ISA / Assembler programming
+- Processor design

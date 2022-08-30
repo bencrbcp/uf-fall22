@@ -1,6 +1,7 @@
 # 1 - Chapter 1
 
 
+
 ## Population and Sample
 
 Subjects: The entities that we measure in a study
@@ -61,4 +62,75 @@ R example:
 ```
 x <- c(0.3, 0.4, 0.8, 1.4, 1.8, 2.1, 5.9, 11.6, 16.9)
 
-quantile(x, (c
+quantile(x, c(0.25, 0.5, 0.75), type=6) # quartiles
+25%     50%     75%
+0.69    1.80    8.75
+```
+
+## Range, Variance, Standard deviation
+
+Range: Difference between largest and smallest
+
+Variance (s^2): Sum_{i=1}^{n} ( (xi - xbar)^2 / n-1 )
+Standard deviation (s): sqrt(s^2)
+
+Interquartile Range (IQR): Q3 - Q1
+
+
+* Range uses only the smallest and largest observations (sensitive to outliers, not used much)
+* Standard deviation uses all observations (sensitive to outliers)
+* IQR is not affected by outliers, used over s when there are severe outliers
+
+
+## Histograms
+
+
+## Shape of a distribution
+
+* Symmetric
+* Skewed to the left (most observations are on the RIGHT)
+* Skewed to the right (most observations are on the LEFT)
+
+
+## Detecting potential outliers
+
+An observation is a potential outlier if it falls more than 1.5x IQR below Q1 or more than 1.5x IQR above Q2
+
+
+## Five-number Summary
+
+1. The minimum
+2. Q1
+3. Q2 (Median)
+4. Q3
+5. Maximum
+
+
+## Box plots
+
+- Box goes from Q1 to Q3
+- Vertical line in the box at the median (NOT necessarily in the middle of the box)
+- Outer line from outside of the box to the largest value that is not a potential outlier
+- Outer line from the outside of the box to the smallest value that is not a potential outlier
+- Potential outliers are shown separately
+
+
+## Boxplot vs. Histogram
+
+* Boxplot does not portray certain features of a distribution, e.g. mounds, gaps
+* Boxplot _does_ indicate skew, and can identify potential outliers
+
+
+## Response variables & Explanatory variables
+
+Response variable (dependent variable): Outcome variable on which comparisons are made (GPA, survival status...)
+
+Categorical explanatory variable (independent variable): Defines the groups to be compared with respect to values for the response variable (e.g. smoking status)
+
+Quantitative explanatory variable (independent variable): Defines the change in different numerical values to be compared with respect to values for the response variable
+
+
+## Scatterplot
+
+* Graphical display for 2 quantitative variables using the horizontal (x) axis for the explanatory variable x and the vertical (y) axis for the response variable y.
+    - Does _not_ confirm a causal relationship, necessarily
