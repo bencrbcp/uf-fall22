@@ -29,9 +29,13 @@ _The optimal base is 3._ (Look at powerpoint for caluclation)
 
 ## Polyadic systems conversion
 
+**Inversion (Successive Integer division):**
+
 **Horner Scheme:**
 
-**Inversion (Successive Integer division):**
+Watch this video (it's better than Bobda's explanation):
+    - [Link](https://www.youtube.com/watch?v=qDG311jci_0)
+
 
 
 ##
