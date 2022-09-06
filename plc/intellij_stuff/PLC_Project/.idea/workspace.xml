@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fd34718-391e-4166-a918-ff837030bdb2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../cis/pentesting_art_tailor_shop_notes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis/pentesting_module0x010_combined.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/Ex000/lock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x000.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x010.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x020.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x030.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/module_combined.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/phrases.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis_backup/report_template.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../eel/lec_aug29.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/plc/homework/Regex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/plc/homework/RegexTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis/Ex000/arts_tailor_shop_notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cis/Ex000/arts_tailor_shop_notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +53,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/uf/plc/intellij_stuff/PLC_Project/src/test/java/plc/homework&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/plc/homework" />
+      <recent name="$PROJECT_DIR$/src/main/java/plc/homework" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="AccountTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PLC_Project.test" />
@@ -96,6 +100,9 @@
       <workItem from="1662433250186" duration="75000" />
       <workItem from="1662433331402" duration="1135000" />
       <workItem from="1662434497026" duration="18000" />
+      <workItem from="1662434540060" duration="1708000" />
+      <workItem from="1662489094218" duration="63000" />
+      <workItem from="1662489165899" duration="24000" />
     </task>
     <servers />
   </component>
