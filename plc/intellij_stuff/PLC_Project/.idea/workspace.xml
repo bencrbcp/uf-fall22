@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7fd34718-391e-4166-a918-ff837030bdb2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../cis/pentesting_art_tailor_shop_notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis/pentesting_module0x010_combined.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/Ex000/lock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x000.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x010.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x020.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/lec_0x030.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/module_combined.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/module_0x00/phrases.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cis_backup/report_template.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../eel/lec_aug29.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PLC_Project" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ENPovdVjt1hLQ0Fc4shQyy4i3U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="AccountTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PLC_Project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="plc.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="plc.examples" />
+      <option name="MAIN_CLASS_NAME" value="plc.examples.AccountTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AccountTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fd34718-391e-4166-a918-ff837030bdb2" name="Changes" comment="" />
+      <created>1662433247387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662433247387</updated>
+      <workItem from="1662433250186" duration="75000" />
+      <workItem from="1662433331402" duration="1135000" />
+      <workItem from="1662434497026" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+</project>
