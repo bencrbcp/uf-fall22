@@ -1,0 +1,9 @@
+WHAT I GATHERED:
+
+- The first key was "This is the key."
+- Angecryption is used, meaning that the first key is also the first ciphertext.
+- Using the provided IV and "This is the key." as both the key and the ciphertext, we are able to get the first plaintext: "Glad you got it!"
+
+AFTER GETTING FIRST KEY:
+
+- From Dr. Wilson: You must base64 decode the other keys and concatenate them (in order) to key0.
