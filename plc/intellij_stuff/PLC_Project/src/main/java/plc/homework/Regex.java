@@ -10,8 +10,8 @@ public class Regex {
 
     public static final Pattern
             EMAIL = Pattern.compile("[A-Za-z0-9._]{2,}@[A-Za-z0-9~]+\\.([A-Za-z0-9-]+\\.)*[a-z]{3}"),
-            ODD_STRINGS = Pattern.compile(""), //TODO
-            CHARACTER_LIST = Pattern.compile(""), //TODO
-            DECIMAL = Pattern.compile(""), //TODO
-            STRING = Pattern.compile(""); //TODO
+            ODD_STRINGS = Pattern.compile(".(..){5,9}"),
+            CHARACTER_LIST = Pattern.compile("\\[((( )*'.'( )*)((,( )*'.'( )*)*)|)\\]"),
+            DECIMAL = Pattern.compile("-?(([123456789]\\d*)|0)\\.\\d+"),
+            STRING = Pattern.compile("\"([^\\\\\"]|\\\\[bnrt'\"\\\\])*\"");
 }

@@ -241,4 +241,3 @@ This example uses outerouter as the router with pfSense
 * Initial state:
     - nc is running on Kali, but Mac cannot make contact
     - Kali machine has outerouter web config running on 174.24.0.1
-    - After adding the port forward rule, the Mac can contact Kali on port 8080 with netcat (nc)

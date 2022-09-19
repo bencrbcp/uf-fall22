@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fd34718-391e-4166-a918-ff837030bdb2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../cis/Ex000/Ex000.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis/Ex000/arts_tailor_shop_notes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cis/Ex000/lock.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -16,8 +14,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/plc/homework/Regex.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/plc/homework/Regex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/plc/homework/RegexTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/plc/homework/RegexTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/plc/homework/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/plc/homework/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/plc/homework/RegexTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/plc/homework/RegexTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ppts/regular_expressions.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ppts/regular_expressions_in_java.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ppts/testing.pptx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,51 +65,107 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/uf/plc/intellij_stuff/PLC_Project/src/test/java/plc/homework",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/plc/homework" />
       <recent name="$PROJECT_DIR$/src/main/java/plc/homework" />
+      <recent name="$PROJECT_DIR$/src/test/java/plc/examples" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountTests">
-    <configuration name="TestRE" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="plc.examples.TestRE" />
-      <module name="PLC_Project.main" />
+  <component name="RunManager" selected="JUnit.RegexTests">
+    <configuration name="RegexTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PLC_Project.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="plc.examples.*" />
+          <option name="PATTERN" value="plc.homework.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="plc.homework" />
+      <option name="MAIN_CLASS_NAME" value="plc.homework.RegexTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegexTests.testCharacterListRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PLC_Project.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="plc.examples.*" />
+          <option name="PATTERN" value="plc.homework.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="plc.examples" />
-      <option name="MAIN_CLASS_NAME" value="plc.examples.AccountTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="plc.homework" />
+      <option name="MAIN_CLASS_NAME" value="plc.homework.RegexTests" />
+      <option name="METHOD_NAME" value="testCharacterListRegex(java.lang.String,java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegexTests.testDecimalRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PLC_Project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="plc.homework.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="plc.homework" />
+      <option name="MAIN_CLASS_NAME" value="plc.homework.RegexTests" />
+      <option name="METHOD_NAME" value="testDecimalRegex(java.lang.String,java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegexTests.testOddStringsRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PLC_Project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="plc.homework.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="plc.homework" />
+      <option name="MAIN_CLASS_NAME" value="plc.homework.RegexTests" />
+      <option name="METHOD_NAME" value="testOddStringsRegex(java.lang.String,java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegexTests.testStringRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PLC_Project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="plc.homework.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="plc.homework" />
+      <option name="MAIN_CLASS_NAME" value="plc.homework.RegexTests" />
+      <option name="METHOD_NAME" value="testStringRegex(java.lang.String,java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AccountTests" />
-        <item itemvalue="Application.TestRE" />
+        <item itemvalue="JUnit.RegexTests" />
+        <item itemvalue="JUnit.RegexTests.testStringRegex" />
+        <item itemvalue="JUnit.RegexTests.testDecimalRegex" />
+        <item itemvalue="JUnit.RegexTests.testCharacterListRegex" />
+        <item itemvalue="JUnit.RegexTests.testOddStringsRegex" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +185,10 @@
       <workItem from="1662489165899" duration="24000" />
       <workItem from="1662491400634" duration="3729000" />
       <workItem from="1662667759548" duration="2579000" />
+      <workItem from="1663331808292" duration="618000" />
+      <workItem from="1663435563501" duration="5089000" />
+      <workItem from="1663442857192" duration="4408000" />
+      <workItem from="1663448889294" duration="9745000" />
     </task>
     <servers />
   </component>
