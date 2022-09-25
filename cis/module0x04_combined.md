@@ -82,7 +82,7 @@ i=0;
 * TCP SYN scan, with option `-sY`
     - half-open sacnning, stealthy
     - Receive a SYN/ACK, then port is listening
-    - Receive a RST/ACK, then port is not listenin
+    - Receive a RST/ACK, then port is not listening
 
 * TCP FIN scan, with `-sF`
     - Unix hosts send RST for closed ports
@@ -202,3 +202,34 @@ The services one would like to discover are provided by programs running on serv
 Nessus, Nexpose, OpenVAS are most popular commercial network audit tools. Used mainly when stealth doesn't matter
 
 Kali usually acts as both the server and client with these tools
+
+
+
+
+
+# MODULE 0x050 LECTURE 0x120 - VULNERABILITY SCANNING
+
+## Nessus
+
+* Download and install Nessus, then start the daemon service.
+    - systemctl start nessusd
+    - Install NASL plugin updates from Tenable through the Settings panel in the Nessus web service
+
+* Different setups
+    - One can employ cloud scans that report back to tenable.io
+    - Local scans that use Nessus agents in a variety of network locations
+
+* Select scanner type
+    - Basic network scan is usally what you want
+
+* Set scan parameters
+    - i.e. IPs
+    - Host discovery may be done or skipped (like `-Pn` in nmap)
+
+* Nessus scan
+    - Vulnerabilities are reported as it goes; ranked according to CVSS 3.0)
+    - Actual risk may differ from CVSS score -- sometimes OK to accept some risk depending on context
+
+* Nessus plugin report (click on the plugin number on the scan results page)
+    - Gives a description on the vulnerability alone and one or more possible solutions
+    - References (e.g. a CVE if available) and metasploit modules may be provided
