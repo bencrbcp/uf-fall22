@@ -152,7 +152,7 @@ Large network scanners:
 
 
 
-# MODULE 0x040 LECTURE 0x110 - SERVICE DISCOVERY
+# MODULE 0x040 LECTURE 0x120 - SERVICE DISCOVERY
 
 ## What are these services?
 
@@ -207,12 +207,14 @@ Kali usually acts as both the server and client with these tools
 
 
 
-# MODULE 0x050 LECTURE 0x120 - VULNERABILITY SCANNING
+# MODULE 0x050 LECTURE 0x130 - VULNERABILITY SCANNING
 
 ## Nessus
 
 * Download and install Nessus, then start the daemon service.
     - systemctl start nessusd
+    - Navigate to https://localhost:8834/
+    - Login on NDG is kali/GlobalGuardianGateway
     - Install NASL plugin updates from Tenable through the Settings panel in the Nessus web service
 
 * Different setups

@@ -7,3 +7,5 @@
 * Team dynamics between kindergatdeners
   - "Boys vs. girls clubs"
   - Boys can't be play or be friends with girls or else they get "kicked out"
+
+*
