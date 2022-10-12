@@ -1,0 +1,9 @@
+* GENERAL NOTES
+
+
+* Nmap: scan first 10k ports
+
+* netcat program: input 53 characters, then the full command + args that you desire
+    - input the brian username first, then:
+    - `python -c 'print('A'*53 + 'cat /home/brian/toool.c')`
+    - check for insecure use of fgets? (might not be the bug in the code)
