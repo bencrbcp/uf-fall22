@@ -336,3 +336,9 @@ FOR /F "tokens=1" %i in (credentials.txt) do
 
 ## Windows Password Guessing from Linux
 TODO
+
+
+
+
+
+# MODULE 0x060 LECTURE 0x180 - UNIX/LINUX INTRO PASSWORD SECURITY
