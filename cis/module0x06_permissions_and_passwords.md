@@ -335,10 +335,155 @@ FOR /F "tokens=1" %i in (credentials.txt) do
 
 
 ## Windows Password Guessing from Linux
-TODO
+
+From Linux, you can use `smbclient` to communicate with a Microsoft SMB server.
+
+* A similar guessing/spraying attack can be mounted by trying to list the available services:
+    - `smbclient -L 192.168.1.131 -U Administrator%password`
+
+A for loop can also be constructed from the above:
+```bash
+for x in $(cat password.txt); do
+    echo $x >>passwords.out
+    smbclient -L 192.168.1.131 -U Administrator%$x >>passwords.out
+done
+```
+
+
+## Password guessing countermeasures
+
+* Restrict TCP ports 135 (MSRPC), 139 and 445 (SMB), and 3389 (TS - Windows Terminal Server) at the firewall
+* Use host-resident firewall
+* Disable unnecessary services (e.g. if your PC does not provide shares on an SMB network, disable listening SMB, MSRPC, and RDP services)
+* Enable the use of strong (long) passwords
+* Don't provide default or easy-to-guess passwords for service accounts
+* Set an account lockout threshold, apply it to administrator account
+* Log account login failures (and review the logs!)
+
+
+## Lanman(ager?) passwords
+
+* Character limit for these passwords = 14
+    - Pretty short by modern standards
+
+* Password converted to uppercase
+    - Doesn't matter what case you use in your password...
+
+* Password null-padded to 14 bytes and divided into two seven-byte halves
+    - Each of these halves are __separately hashed__
+
+* Only 69 characters available for the password, so only 69^7 unique password halves (~7.5 trillion)
+    - __Not that many...__
+    - The well known `l0phtcrack` program demonstrated how weak this is
+
+* No __salt__ is used
+    - (Subject to pre-computed dictionary attack)
+
+* Replaced by NTLM in 1993 and NTLMv2 in 1998
+
+* __Rainbow tables__ are a creative way to represent this kind of information
+
+
+## Rainbow tables
+
+Why don't we just compute and store all possible hashes?
+A: Because there are too many.
+
+* Problem: Computing and storing hashes takes up a lot of space
+    - 69^7 = ~2^43 possible LM passwords
+
+* Rainbow plan is based on a trick originally attributed to Martin Hellman
+    - Uses two functions: H -- the hash function, and R -- the reduction function
+    - R (the reduction function) translates a hash into a possible key to be hashed
+    - H (the hash function) translates a key into a hash
+
+
+## Rainbow tables plan
+
+I have these two functions: H and R. Now what?
+
+* Starting with a password, apply (H followed by R) some fixed number of times
+    - That's going to hash it, and then it's going to invert the hash into some other potential password (NOT THE ORIGINAL PASSWORD)
+
+* This yields a hash chain
+
+* Store the ends and the beginnings of every hash chain
+    - In between, there were hashes -- we don't store those
+    - We just end up with a list of potential passwords
+
+* Upon encountering a new hash, apply R (possibly followed by H and R repeatedly) until you find a word at the end of a chain
+
+* Then, start at the beginning of that chain until you encounter the hash you presented initially
+
+Failure modes do exist for this, despite its success (e.g. colliding chains and/or missing hashes)
+
+
+## Tools for Windows Password Cracking
+
+* John The Ripper Jumbo (enhanced version of John), hashcat
+
+* Cain and Abel (AKA Cain)
+
+
+## If you could only take one Windows tool: Cain
+
+- WEP cracking
+- VOIP decoding
+- ARP spoofing
+- Hash calculation
+- Traceroute
+- Password decryption
+- Password sniffing
 
 
 
 
 
-# MODULE 0x060 LECTURE 0x180 - UNIX/LINUX INTRO PASSWORD SECURITY
+# MODULE 0x060 LECTURE 0x1b0 - MORE ABOUT PASSWORD CRACKING
+
+## JUNE 2017 NIST Guidelines
+
+* NIST SP 800-63b, Digital Identity Guideliens
+    - https://pages.nist.gov/800-63-3/sp800-63b.html
+    - This identifies what you should do for passwords (and authentications in general)
+
+* Three authentication levels with varying levels of assurance (some, high, very high) that the claimant is who they claim to be
+    - AAL2 (high confidence) requires multi-factor identification using a possession authenticator (something you _have_)
+
+* Requires memorialized secrets to be checked against common or possibly guessable values, such as...
+
+
+## Joe Accounts
+
+User Joe has password Joe... who would've guessed that?
+
+* Despite repeated exhortations never to use your username as your password, you can see it happen
+    - (tomcat:tomcat, msfadmin:msfadmin, ...)
+    - Yes, it happens even with non-default passwords
+
+
+## Brute-force strategy
+
+Brute forcing for large collections of salted passwords is pretty much hopeless in today's environments
+
+* For now, the drill is:
+    - If you're going to have to brute-force one of a number of accounts, choose the most likely to have an uncomplicated password
+    - e.g. accounts commonly used by people with little security motivation
+    - Follow the statistics for password lengths for doing your tries (increases probability of finishing early)
+
+
+## Password statistics from HaveIBeenPwned
+
+* Passwords of length 9 occupied highest percentage (32%) of the database
+    - Followed by length 11, then length 10, then length 8
+
+
+## Don't deploy using default passwords
+
+Motorola/Arris Surfboard Modem
+- Undeletable root account w/ day-by-day generated password
+- Password generation was uncovered, published online
+- RIP Dr. Wilson
+
+
+##
