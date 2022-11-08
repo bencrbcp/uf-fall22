@@ -1,0 +1,10 @@
+# SPRING 2022 REGISTRATION
+
+CAP4136 - Malware Reverse Engineering
+    MWF Period 4 (10:40-11:30)
+
+CIS4360 - Computer and Information Security
+
+CEN3031 - Intro Software Engineering
+
+MAS3114 - Computational Linear Algebra

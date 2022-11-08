@@ -1,0 +1,4 @@
+* Correct login is `s.wilkins`:`Summer2022`
+    - used the "Eve" name in the document to look for characters in the "Invincible" TV series
+    - "<Season><Year>" password format came from Beau's video + examples from SprayToolKit github
+    - KEY010 is in an email within the OWA upon logging in with the creds
