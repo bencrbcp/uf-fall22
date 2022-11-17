@@ -213,3 +213,66 @@ According to W3tech surveys, as of March 2020, about 12.5% of websites use HSGTS
 
 
 # MODULE 0x0a0 LECTURE 0x2c0 --SSH: How does it work, really?
+
+The SSH server:
+- Listens for connections on port 22
+- Negotiates the secure connection
+- Authenticates the connecting party
+- Creates the correct environment if the credentials are accepted
+
+The SSH client:
+- Initiates the TCP handshake
+- Negotiates the secure connection
+- Verifies the server identity from previously recorded information, i.e. the server _fingerpirnt_ (a hash of its public key)
+- Provides authentication credentials ot communicate
+
+
+## Requirements for best use
+
+Key exchange algorithm (kex) starts with each participant (client and server) guessing which of a list of algorithms the other participant supports
+
+- Each participant sends an initial key exchange packet according to the algorithm
+- The guess is wrong if participants have different preferred algorithms and no algorithm can be agreed upon
+- Output from key exchange is a shared secret key K and an exchange hash H. Each key exchange algorithm has a hash algorithm HASH that produces H
+- H, K, and other determinable values are used to compute an IV for encryption, server and client encryption keys, and server and client integrity keys.
+
+
+## Encrypting the session
+
+A symmetric key session key is negotiated using the __Diffie-Hellman algorithm__
+
+1. The client and server together identify prime p.
+2. The client and server agree on an encryption generator g.
+3. The client chooses random number x and the server chooses random y. These are their private keys.
+4. The client and server each use their private key together with p and the g to create a public key that can be shared with with the other.
+5. The client and the server exchange public keys.
+6. Each party uses their private key, the other party's public key, and p to create a shared secret key (the algorithm ensures it will be the same for both parties)
+    - The shared secret is used to symmetrically all following communications
+
+
+## How is user access authenticated?
+
+* Password authentication:
+    - The user sends their password through the encrypted communication
+
+* Public key authentication:
+    - The user has already created a public/private key pair and shares the public key with the server
+    - The client sends a signature encrypted with the private key
+    - The server checks the user's `authorized_keys` file to verify this pair
+    - If it matches, the server generates a random number (nonce) and encrypts it with the client's public key and sends it to the client.
+    - The cient decrypts the nonce and sends back its MD5 hash.
+    - The server compares that value to the MD5 hash of the nonce. If they match, the session proceeds
+
+
+## Where is the vulnerability?
+
+* An MitM server can carry out password authentication without the client's knowledge
+    - (difficult to do for public key auth, easy to do for password)
+    - The only protection that the client has is to notice that the stored fingerprint for the server doesn't match the communicated fingerprint
+
+* The fingerprint changes whenever the server private/public key changes.
+    - This can happen legitimately, e.g. when an OS is upgraded or if the credentials have been compromised.
+
+* Since this exploits user behavior (their checking of the fingerprint), rather than an algorithmic error, one can consider this a social-engineering attack.
+
+END MODULE 0x0a
