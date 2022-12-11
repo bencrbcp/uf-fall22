@@ -1,6 +1,6 @@
 # MODULE 0x0c LECTURE 0x301 - THE DIRTY COW UNPENNED
 
-## Who foudn the CoW?
+## Who found the CoW?
 
 * Phil administered a server that supported full packet capture of every HTTP request
     - That server had been compromised, so he investigated the server logs
